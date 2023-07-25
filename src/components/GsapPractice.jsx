@@ -35,16 +35,28 @@ const GsapPractice = () => {
           yoyo: true,
           repeat: -1,
      })
-     gsap.to(".bg_img", {
-          duration: 10,
-          backgroundPosition: "100% 0%",
-          yoyo: true,
-          repeat: -1,
+     gsap.fromTo(".nature_text", {
+       stagger: 2,
+       scale:0,
+     },
+      {
+       stagger: 2,
+        scale: 2,
+       ease:"bounce"
      })
-  },[])
-
-  //   let mm = gsap.matchMedia();
-  // mm.add("(max-width:992px)", () => {})
+     gsap.fromTo(".nature_text", {
+      //  stagger: 2,
+       scale: 0,
+       color:"green",
+     },
+      {
+      //  stagger: 2,
+        scale: 2,
+        ease: "bounce",
+        color: "orange",
+        duration: 2,
+     })
+  })
   return (
     <>
       <div className="overflow-hidden">
@@ -63,7 +75,7 @@ const GsapPractice = () => {
         </div>
         <div className="min-vh-100 bg-danger"></div> */}
         <div className="bg_img min-vh-100 d-flex justify-content-center align-items-center">
-        <h2 className="text-white nature_text">This Is A Beautiful Nature</h2>
+        <h2 className=" nature_text">This Is A Beautiful Nature</h2>
       </div>
       </div>
     </>
